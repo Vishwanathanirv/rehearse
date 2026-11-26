@@ -115,7 +115,7 @@ export default async function Dashboard() {
             Entries
           </h2>
           {rows.length === 0 ? (
-            <p className="mt-4 text-sm text-muted">No entries yet.</p>
+            <div className="mt-6 flex flex-wrap items-center gap-4"><p className="text-sm text-muted">No entries yet. Your first interview takes about ten minutes.</p><Link href="/interview/new" className="btn btn-accent">Start an interview</Link></div>
           ) : (
             <ol className="ruled">
               {rows.map((r) => {

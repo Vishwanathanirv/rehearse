@@ -1,6 +1,6 @@
 # Rehearse · AI mock interviews
 
-**[Live demo →](https://ai-mock-interviews-v2-gules.vercel.app)** · no sign-up, click *Try it now*
+**[Live demo →](https://ai-mock-interviews-v2-gules.vercel.app)** · no sign-up
 
 **The problem.** Most people prepare for interviews by reading answers, then freeze when they have to say them out loud to someone who is judging them. Friends go easy on you; question banks never talk back.
 
@@ -30,8 +30,6 @@ This is version 2, a complete rebuild of an earlier AI mock interview platform.
 
 ## Highlights
 
-**How an answer is graded** (home page, or the *How it works* button in the hero) runs the real grader on a sample answer you can edit, technical or behavioural, with a slider for how long it took to say. It steps through conduct (red flags that cap the score), concept coverage, depth and structure, delivery (pace, fillers, hedges), the weighted score, and what Arjun says next, including the follow-up he asks when a key idea is missing.
-
 - **Listens and adapts like a person.** After each answer a small, fast AI call (Flash-Lite, 5 s limit) decides what Arjun says and does next: he reacts to something specific you said or to how you came across (rushing, flat voice, avoiding eye contact, lying down), digs deeper with his own follow-up built on your words (up to twice on the same question), or picks the next topic that follows from the conversation and bridges to it. Full grading runs in the background after the reply has gone back, so the conversation never waits on it.
 - **His verdict, to your face.** After answering your closing question he says "Before you go, I'll give you my honest feedback" and tells you, out loud and without sugar-coating, whether you'd get through, your weakest moment in your own words, and the one thing to fix. The written report follows. Without AI, a rules-based verdict is just as blunt.
 - **Runs like a real interview, start to finish.** Arjun introduces himself and his team, says how long it will take, asks his questions with follow-ups, and ends with "Do you have any questions for me?", answering yours in character. During the call he keeps his verdict to himself, like a real interviewer: no scores on screen, just natural acknowledgements, though he will stop you on the spot over conduct (lying in bed, joking). Say "let me think" and he waits; run past three minutes and he politely cuts in.
@@ -56,8 +54,8 @@ This is version 2, a complete rebuild of an earlier AI mock interview platform.
 - **A skill map that learns.** Every answer updates a Bayesian estimate of how well you know each topic (a Beta posterior, with harder questions counting for more and old answers fading over a 30-day half-life). The dashboard shows each topic with an uncertainty band, so one lucky answer never marks a topic as mastered. A spaced-practice schedule brings weak topics back after a day and strong ones after ten, and **"Practise my weak spots"** starts a session aimed straight at them.
 - **STAR coaching** for behavioural questions: situation, task, action and result are checked, and missing parts are named.
 - **Two grading engines behind one interface.**
-  - *Rules*: transparent, deterministic scoring that works with zero configuration.
-  - *AI (Gemini)*: grades content, depth and structure with a JSON schema and validates the response with Zod. Delivery stays measured. If the AI call fails or times out, it falls back to the rules engine, so a session never breaks.
+  - Rules: transparent, deterministic scoring that works with zero configuration.
+  - AI (Gemini): grades content, depth and structure with a JSON schema and validates the response with Zod. Delivery stays measured. If the AI call fails or times out, it falls back to the rules engine, so a session never breaks.
 - **13 roles × 4 levels × 3 interview types**: frontend, backend, full-stack, Java, mobile, QA/test automation, DevOps/Linux, cloud/SRE, network, security, data/ML, data analyst and product manager. 78 technical and 11 behavioural questions, each with key concepts, synonyms and a follow-up.
 - **A practice log, not a dashboard.** The same graph paper as the home page: every interview plotted in ink against its hiring bar in red pencil, the skill map drawn as measurements with error whiskers, and each session a ruled entry. Every answer can be revisited in its report, and reports can be saved as PDF.
 - **Secure by default.**
@@ -140,7 +138,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000 and click **Try it now**. You don't need a database or API key: an embedded Postgres is created in `./.data`.
+Open http://localhost:3000 and click **Start an interview**. You don't need a database or API key: an embedded Postgres is created in `./.data`.
 
 Optional settings (copy `.env.example` to `.env.local`):
 

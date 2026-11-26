@@ -47,7 +47,7 @@ export function SkillDemo() {
       <div className="relative mt-6 mr-10" role="img" aria-label={latest ? `Estimated skill ${Math.round(latest.mean * 100)}%, likely between ${Math.round(latest.low * 100)}% and ${Math.round(latest.high * 100)}%` : "No answers yet"}>
         {/* The bar a topic must clear to count as strong. */}
         <div className="absolute bottom-0 top-0 border-l-2 border-dashed border-pencil/70" style={{ left: "62%" }} aria-hidden>
-          <span className="absolute -top-5 left-1.5 whitespace-nowrap text-xs italic text-pencil">strong line</span>
+          <span className="absolute -top-5 left-1.5 whitespace-nowrap text-xs text-pencil">strong line</span>
         </div>
         <ol className="space-y-2.5 pt-1">
           {rows.length === 0 && (

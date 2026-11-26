@@ -2,7 +2,6 @@ import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
 import { GuestButton } from "@/components/GuestButton";
 import { HonestDemo } from "@/components/home/HonestDemo";
-import { HowItWorks } from "@/components/home/HowItWorks";
 import { SkillDemo } from "@/components/home/SkillDemo";
 import { TurnDemo } from "@/components/home/TurnDemo";
 import { VoiceStrip } from "@/components/home/VoiceStrip";
@@ -46,10 +45,7 @@ export default async function Home() {
               Rehearse is a mock interviewer that talks with you, waits when you pause, and tells you honestly how it went. The line below is a voice drawn by the same pitch tracker that measures your answers.
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              <GuestButton signedIn={signedIn}>{signedIn ? "Start an interview" : undefined}</GuestButton>
-              <a href="#how-it-works" className="btn btn-ghost">
-                How it works
-              </a>
+              <GuestButton signedIn={signedIn}>Start an interview</GuestButton>
               {signedIn ? (
                 <Link href="/dashboard" className="btn btn-ghost">
                   Your dashboard
@@ -77,13 +73,6 @@ export default async function Home() {
           </section>
         ))}
 
-        <section id="how-it-works" className="mx-auto grid max-w-6xl scroll-mt-20 items-start gap-8 px-4 py-14 sm:px-6 md:grid-cols-[0.8fr_1fr] md:gap-14">
-          <div className="md:pt-4">
-            <h2 className="font-display text-[clamp(1.6rem,3vw,2.2rem)] font-semibold leading-[1.1] tracking-[-0.02em]">How an answer is graded.</h2>
-            <p className="mt-4 max-w-[30rem] leading-relaxed text-muted">Follow one answer through the grader that runs after every question: conduct first, then what you covered, how deep and how clearly, how you sounded, the weighted score, and what Arjun does next. Change the answer, or how long it took to say, and watch each stage move.</p>
-          </div>
-          <HowItWorks />
-        </section>
 
         <section className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6">
           <div className="flex flex-col gap-6 border-t-[1.5px] border-pen/70 pt-10 md:flex-row md:items-center md:justify-between">

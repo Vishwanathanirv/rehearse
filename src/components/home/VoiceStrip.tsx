@@ -135,7 +135,7 @@ function draw(canvas: HTMLCanvasElement, trace: Trace, reveal: number) {
   g.strokeStyle = c.pencil;
   g.fillStyle = c.pencil;
   g.lineWidth = 1.6;
-  g.font = "italic 600 12px Inter Variable, Inter, sans-serif";
+  g.font = "600 12px Inter Variable, Inter, sans-serif";
   for (const p of pausesOf(shown)) {
     const a = x(p.from);
     const b = x(p.to);
@@ -303,7 +303,7 @@ export function VoiceStrip() {
             </button>
           ) : (
             <button type="button" className="btn btn-primary" onClick={start}>
-              {mode === "yours" ? "Record again" : "Try it with your voice"}
+              {mode === "yours" ? "Record again" : "Record your voice"}
             </button>
           )}
           <p className="text-sm text-faint">Up to {MAX_SEC} seconds. Your audio never leaves this page.</p>
