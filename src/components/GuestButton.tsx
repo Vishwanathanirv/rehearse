@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
  * Starts practising straight away. A visitor gets a guest session first; someone already signed
  * in goes straight to the setup page, keeping their account (and their history).
  */
-export function GuestButton({ className = "btn btn-accent", children = "Try it now, no sign-up", signedIn = false }: { className?: string; children?: React.ReactNode; signedIn?: boolean }) {
+export function GuestButton({ className = "btn btn-accent", children = "Start an interview", signedIn = false }: { className?: string; children?: React.ReactNode; signedIn?: boolean }) {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);

@@ -83,7 +83,7 @@ export function TurnDemo() {
           <div className="absolute left-0 top-3 h-2 rounded-full bg-pen" style={{ width: pct(quiet) }} />
           {threshold !== null && (
             <div className="absolute top-0 h-8 border-l-2 border-dashed border-pencil" style={{ left: pct(threshold) }}>
-              <span className="absolute left-1.5 top-[-1.4rem] whitespace-nowrap text-xs italic text-pencil">replies at {(threshold / 1000).toFixed(1)}s</span>
+              <span className="absolute left-1.5 top-[-1.4rem] whitespace-nowrap text-xs text-pencil">replies at {(threshold / 1000).toFixed(1)}s</span>
             </div>
           )}
         </div>
