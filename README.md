@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/kon.svg" width="100%" alt="Rehearse: A voice interviewer that follows up. A plush lion in a black robe, headphones and sunglasses.">
+</p>
+
 # Rehearse · AI mock interviews
 
 **[Live demo →](https://ai-mock-interviews-v2-gules.vercel.app)** · no sign-up
