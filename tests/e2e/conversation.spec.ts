@@ -20,7 +20,7 @@ test("the interviewer listens, reacts honestly and moves on without any buttons"
   await fakeVoice(page, ANSWERS);
 
   await page.goto("/");
-  await page.getByRole("button", { name: "Start an interview" }).first().click();
+  await page.getByRole("button", { name: "Start an interview" }).click();
   await page.getByRole("button", { name: /Backend Developer/ }).click();
   await page.getByRole("button", { name: "Junior" }).click();
   await page.getByLabel("Number of questions").fill("3");

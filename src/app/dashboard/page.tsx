@@ -79,7 +79,7 @@ export default async function Dashboard() {
           ) : (
             <div className="mt-6 grid gap-5 py-6 md:grid-cols-[1fr_auto] md:items-center">
               <p className="max-w-lg leading-relaxed text-muted">
-                Nothing plotted yet. Each interview you finish becomes a point on this page, measured against the bar a hiring panel would hold you to. The first takes about ten minutes, out loud.
+                Nothing plotted yet. Each interview you finish becomes a point on this page, measured against the bar a hiring panel would hold you to.
               </p>
               <Link href="/interview/new" className="btn btn-primary justify-self-start">
                 Start your first interview
@@ -115,7 +115,7 @@ export default async function Dashboard() {
             Entries
           </h2>
           {rows.length === 0 ? (
-            <div className="mt-6 flex flex-wrap items-center gap-4"><p className="text-sm text-muted">No entries yet. Your first interview takes about ten minutes.</p><Link href="/interview/new" className="btn btn-accent">Start an interview</Link></div>
+            <p className="mt-4 text-sm text-muted">No entries yet. Each interview you finish is logged here.</p>
           ) : (
             <ol className="ruled">
               {rows.map((r) => {
