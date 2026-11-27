@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/kon.svg" width="100%" alt="Rehearse. A plush orange lion in headphones and sunglasses panics, changes into a robed swordsman and slashes the hollows breaking out of the sky.">
-</p>
-
 # Rehearse · AI mock interviews
 
 **[Live demo →](https://ai-mock-interviews-v2-gules.vercel.app)** · no sign-up
