@@ -7,7 +7,7 @@ const GOOD =
 test("guest can complete a full interview by voice and see a report", async ({ page }) => {
   await fakeVoice(page, Array(8).fill(GOOD));
   await page.goto("/");
-  await page.getByRole("button", { name: "Start an interview" }).first().click();
+  await page.getByRole("button", { name: "Start an interview" }).click();
   await expect(page).toHaveURL(/\/interview\/new/);
 
   await page.getByRole("button", { name: /Backend Developer/ }).click();
@@ -78,7 +78,7 @@ test("protected pages redirect to sign in, and accounts work end to end", async 
 
   // Starting from the home page while signed in keeps the account (it used to swap in a guest).
   await page.goto("/");
-  await page.getByRole("button", { name: "Start an interview" }).first().click();
+  await page.getByRole("button", { name: "Start an interview" }).click();
   await expect(page).toHaveURL(/\/interview\/new/);
   await page.goto("/dashboard");
   await expect(page.getByText("Hi Test")).toBeVisible();
@@ -88,7 +88,7 @@ test("users cannot read each other's interviews", async ({ browser, request }) =
   const a = await browser.newContext();
   const pa = await a.newPage();
   await pa.goto("/");
-  await pa.getByRole("button", { name: "Start an interview" }).first().click();
+  await pa.getByRole("button", { name: "Start an interview" }).click();
   await expect(pa).toHaveURL(/\/interview\/new/);
   const res = await pa.request.post("/api/interviews", { data: { role: "security", level: "mid", focus: "technical", totalQuestions: 3 } });
   expect(res.status()).toBe(201);
@@ -115,7 +115,7 @@ test("browsers that can't listen are told to switch, not offered a typing fallba
     delete (window as unknown as Record<string, unknown>).SpeechRecognition;
   });
   await page.goto("/");
-  await page.getByRole("button", { name: "Start an interview" }).first().click();
+  await page.getByRole("button", { name: "Start an interview" }).click();
   await page.getByRole("button", { name: /Backend Developer/ }).click();
   await page.getByRole("button", { name: "Start interview" }).click();
   await expect(page.getByText(/voice only, and this browser can't listen/)).toBeVisible();

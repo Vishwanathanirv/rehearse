@@ -16,6 +16,12 @@ export function GuestButton({ className = "btn btn-accent", children = "Start an
   useEffect(() => {
     if (signedIn) router.prefetch("/interview/new");
   }, [router, signedIn]);
+  // A page restored from the back-forward cache must not come back stuck on "Starting…".
+  useEffect(() => {
+    const reset = (e: PageTransitionEvent) => e.persisted && setBusy(false);
+    window.addEventListener("pageshow", reset);
+    return () => window.removeEventListener("pageshow", reset);
+  }, []);
   return (
     // The error sits under the button without taking space, so nothing next to it moves.
     <span className={`relative ${className.includes("w-full") ? "flex w-full" : "inline-flex"} flex-col`}>
@@ -30,14 +36,18 @@ export function GuestButton({ className = "btn btn-accent", children = "Start an
             router.push("/interview/new");
             return;
           }
-          const res = await fetch("/api/auth/guest", { method: "POST" });
-          if (res.ok) {
-            router.push("/interview/new");
-            router.refresh();
-          } else {
+          try {
+            const res = await fetch("/api/auth/guest", { method: "POST" });
+            if (res.ok) {
+              router.push("/interview/new");
+              router.refresh();
+              return;
+            }
             setError((await res.json().catch(() => ({}))).error ?? "Could not start a guest session.");
-            setBusy(false);
+          } catch {
+            setError("No connection. Check your network and try again.");
           }
+          setBusy(false);
         }}
       >
         {busy ? "Starting…" : children}
