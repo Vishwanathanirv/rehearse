@@ -77,7 +77,7 @@ export default async function Home() {
         <section className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6">
           <div className="flex flex-col gap-6 border-t-[1.5px] border-pen/70 pt-10 md:flex-row md:items-center md:justify-between">
             <p className="max-w-[30rem] font-display text-2xl font-semibold leading-snug tracking-[-0.02em]">Ten minutes, out loud, with someone who won&rsquo;t go easy on you.</p>
-            <GuestButton signedIn={signedIn}>Start an interview</GuestButton>
+            <GuestButton signedIn={signedIn}>Start practising now</GuestButton>
           </div>
           <p className="mt-6 text-sm text-faint">Voice only, like a real interview. Use Chrome or Edge on a computer.</p>
         </section>
